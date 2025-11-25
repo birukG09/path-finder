@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Addis Ababa Pathfinding System</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Addis Ababa City Pathfinding</h1>
+            <p>Choose from UCS, DFS, or A* Algorithm</p>
+        </header>
+
+        <div class="content">
+            <div class="controls">
+                <div class="form-group">
+                    <label for="start">Starting Location:</label>
+                    <select id="start">
+                        <option value="">Select location...</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="goal">Goal Location:</label>
+                    <select id="goal">
+                        <option value="">Select location...</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="algorithm">Algorithm:</label>
+                    <select id="algorithm">
+                        <option value="ucs">Uniform Cost Search (UCS)</option>
+                        <option value="dfs">Depth-First Search (DFS)</option>
+                        <option value="astar">A* Search</option>
+                    </select>
+                </div>
+
+                <button id="findPath" class="btn">Find Path</button>
+                <button id="clearPath" class="btn btn-secondary">Clear</button>
+
+                <div id="warnings" class="warnings"></div>
+                <div id="results" class="results"></div>
+
+                <div class="constraints-list">
+                    <h3>Constraint Handling:</h3>
+                    <ol>
+                        <li>Same Start and Goal</li>
+                        <li>Unknown or Invalid Locations</li>
+                        <li>Multiple Optimal Paths</li>
+                        <li>Road Condition Assessment</li>
+                        <li>Traffic Level Simulation</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="map-container">
+                <div id="map"></div>
+                <button id="legendToggle" class="legend-toggle" title="Constraint Handling Information">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="12" y1="16" x2="12" y2="12"></line>
+                        <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                    </svg>
+                </button>
+                <div id="legend" class="legend">
+                    <div class="legend-header">
+                        <h3>Constraint Handling</h3>
+                        <button id="legendClose" class="legend-close">&times;</button>
+                    </div>
+                    <div class="legend-content">
+                        <div class="legend-item">
+                            <div class="legend-icon">&#10003;</div>
+                            <div class="legend-text">
+                                <strong>Same Start & Goal:</strong>
+                                <p>If you select the same location for both start and destination, the system will notify you that you're already at your destination.</p>
+                            </div>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-icon">&#9888;</div>
+                            <div class="legend-text">
+                                <strong>Unknown Locations:</strong>
+                                <p>If you enter an invalid location, the system returns an error and shows a list of valid locations.</p>
+                            </div>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-icon">&#8596;</div>
+                            <div class="legend-text">
+                                <strong>Multiple Optimal Paths:</strong>
+                                <p>When multiple paths have the same distance, the system lists all options and displays them in different colors on the map.</p>
+                            </div>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-icon road-good">&#9679;</div>
+                            <div class="legend-icon road-moderate">&#9679;</div>
+                            <div class="legend-icon road-poor">&#9679;</div>
+                            <div class="legend-text">
+                                <strong>Road Conditions:</strong>
+                                <p>Roads are marked as <span class="road-good">good</span>, <span class="road-moderate">moderate</span>, or <span class="road-poor">poor</span>. You'll receive warnings for poor road conditions.</p>
+                            </div>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-icon">&#128663;</div>
+                            <div class="legend-text">
+                                <strong>Traffic Hotspots:</strong>
+                                <p>Major areas like Meskel Square, Megenagna, Bole Michael, and Piazza are marked as high traffic zones. You'll be warned when starting from these locations.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="/static/script.js"></script>
+</body>
+</html>
