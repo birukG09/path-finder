@@ -6,10 +6,12 @@ This project is a Flask-based pathfinding application that visualizes optimal ro
 It integrates:
 
 Leaflet.js interactive map
+![Preview](https://github.com/birukG09/path-finder/blob/0f104808c8b486dec8a0f45a5047ed5833923fc8/FireShot%20Capture%20007%20-%20Addis%20Ababa%20Pathfinding%20System%20-%20%5B127.0.0.1%5D.png)
 
 Custom city graph with 9 key areas (Meskel Square, Bole, Piazza, Megenagna, Airport, Arada, Merkato, CMC, Bole Michael)
+![My Screenshot](https://github.com/birukG09/path-finder/blob/0f104808c8b486dec8a0f45a5047ed5833923fc8/FireShot%20Capture%20009%20-%20Addis%20Ababa%20Pathfinding%20System%20-%20%5B127.0.0.1%5D.png)
 
-Constraint handling (traffic, road conditions, invalid inputs, duplicated start-end, etc.)
+Constraint handling 
 
 Multiple-path detection
 
