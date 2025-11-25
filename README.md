@@ -1,5 +1,6 @@
 Addis Ababa City Pathfinding System — README
 
+![Alt text](https://github.com/birukG09/path-finder/blob/b08ad2663e4c9acf35c9f1df096cc7709f530f88/FireShot%20Capture%20005%20-%20Addis%20Ababa%20Pathfinding%20System_%20-%20%5B4f28495d-fe83-4949-97b9-de51b2ec7093-00-aaasqmh1p91z.spock.replit.dev%5D.png)
 
 This project is a Flask-based pathfinding application that visualizes optimal routes between major locations in Addis Ababa using UCS, DFS, or A* algorithms.
 It integrates:
