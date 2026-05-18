@@ -58,7 +58,7 @@ If a location does not exist in the graph:
 
 The system reports the error and lists all valid locations.
 
-c. Multiple Optimal Paths
+c. Multiple Optimal Path maps
 
 If two or more shortest paths exist:
 
