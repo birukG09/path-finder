@@ -172,10 +172,6 @@ python app.py
 
 3. Open the App
 
-Visit:
-
-http://127.0.0.1:5000
-
 
 You will see the interface with:
 
